@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - MicLab</title>
     <style>
+        :root {
+            --bg-dark: #050816;
+            --accent-1: #ff4ecd;
+            --accent-2: #4be1ff;
+            --text-main: #fdfdfd;
+            --text-muted: #b9b9d2;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -12,10 +20,84 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
-            background: #050816;
-            color: #fdfdfd;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+            background: radial-gradient(circle at 0% 0%, #ff4ecd15 0, transparent 60%),
+                radial-gradient(circle at 100% 0%, #4be1ff20 0, transparent 55%),
+                #050816;
+            color: var(--text-main);
             line-height: 1.7;
+        }
+        
+        .header {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(75, 225, 255, 0.1);
+        }
+        
+        .logo-link {
+            color: var(--accent-2);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        
+        .logo-link:hover {
+            text-decoration: underline;
+        }
+        
+        .header-right {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+        }
+        
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-2);
+        }
+        
+        .lang-switcher {
+            display: flex;
+            gap: 8px;
+            font-size: 12px;
+        }
+        
+        .lang-switcher button {
+            background: transparent;
+            border: 1px solid rgba(75, 225, 255, 0.3);
+            color: var(--text-muted);
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .lang-switcher button.active {
+            background: rgba(75, 225, 255, 0.2);
+            color: var(--accent-2);
+            border-color: var(--accent-2);
+        }
+        
+        .lang-switcher button:hover {
+            border-color: var(--accent-2);
+            color: var(--accent-2);
         }
         
         .container {
@@ -27,11 +109,11 @@
         h1 {
             font-size: 32px;
             margin-bottom: 10px;
-            color: #ff4ecd;
+            color: var(--accent-1);
         }
         
         .last-updated {
-            color: #b9b9d2;
+            color: var(--text-muted);
             margin-bottom: 30px;
             font-size: 14px;
         }
@@ -40,18 +122,18 @@
             font-size: 20px;
             margin-top: 30px;
             margin-bottom: 15px;
-            color: #4be1ff;
+            color: var(--accent-2);
         }
         
         p {
             margin-bottom: 15px;
-            color: #b9b9d2;
+            color: var(--text-muted);
         }
         
         ul {
             margin-left: 20px;
             margin-bottom: 15px;
-            color: #b9b9d2;
+            color: var(--text-muted);
         }
         
         li {
@@ -59,31 +141,34 @@
         }
         
         a {
-            color: #4be1ff;
+            color: var(--accent-2);
             text-decoration: none;
         }
         
         a:hover {
             text-decoration: underline;
         }
-        
-        .nav {
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(75, 225, 255, 0.1);
-        }
-        
-        .nav a {
-            margin-right: 20px;
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="nav">
-            <a href="https://miclab.app">← Back to MicLab</a>
+    <div class="header">
+        <a href="https://miclab.app" class="logo-link">← MicLab</a>
+        <div class="header-right">
+            <div class="nav-links">
+                <a href="https://miclab.app/privacy">Privacy</a>
+                <a href="https://miclab.app/terms" class="active">Terms</a>
+            </div>
+            <div class="lang-switcher">
+                <button class="active" onclick="switchLang('en')">EN</button>
+                <button onclick="switchLang('tr')">TR</button>
+                <button onclick="switchLang('tm')">TM</button>
+                <button onclick="switchLang('ru')">RU</button>
+                <button onclick="switchLang('uz')">UZ</button>
+            </div>
         </div>
-        
+    </div>
+    
+    <div class="container">
         <h1>Terms of Service</h1>
         <div class="last-updated">Last updated: November 18, 2025</div>
         
@@ -133,5 +218,28 @@
             <li>Email: <a href="mailto:support@miclab.app">support@miclab.app</a></li>
         </ul>
     </div>
+    
+    <script>
+        function switchLang(lang) {
+            // Store language preference
+            localStorage.setItem('miclab-lang', lang);
+            // Update active button
+            document.querySelectorAll('.lang-switcher button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            // In production, this would reload content in selected language
+        }
+        
+        // Load saved language preference
+        window.addEventListener('load', function() {
+            const saved = localStorage.getItem('miclab-lang') || 'en';
+            document.querySelectorAll('.lang-switcher button').forEach(btn => {
+                if (btn.textContent === saved.toUpperCase()) {
+                    btn.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
