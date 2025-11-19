@@ -696,8 +696,8 @@
                 <a href="#download">Download</a>
             </div>
             <div class="nav-legal">
-                <a href="https://miclab.app/privacy">Privacy</a>
-                <a href="https://miclab.app/terms">Terms</a>
+                <a href="https://miclab.app/privacy/privacy.html">Privacy</a>
+                <a href="https://miclab.app/terms/terms.html">Terms</a>
             </div>
             <div class="lang-switcher" id="language-switcher">
                 <button class="active" data-lang="en">EN</button>
@@ -891,13 +891,14 @@
         <footer>
             <div>© 2025 MicLab. All rights reserved.</div>
             <div>
-                <a href="https://miclab.app/privacy">Privacy Policy</a>
-                · <a href="https://miclab.app/terms">Terms of Service</a>
-                · <a href="mailto:support@miclab.app">Contact</a>
+                <a href="https://miclab.app/privacy/privacy.html">Privacy Policy</a>
+                · <a href="https://miclab.app/terms/terms.html">Terms of Service</a>
+                · <a href="/cdn-cgi/l/email-protection#0d7e787d7d627f794d60646e616c6f236c7d7d">Contact</a>
             </div>
         </footer>
     </div>
 
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
         // Language switcher functionality
         document.querySelectorAll('#language-switcher button').forEach(button => {
@@ -916,12 +917,3 @@
             document.querySelectorAll('#language-switcher button').forEach(button => {
                 if (button.dataset.lang === saved) {
                     button.classList.add('active');
-                } else {
-                    button.classList.remove('active');
-                }
-            });
-        });
-    </script>
-</body>
-
-</html>
