@@ -907,9 +907,7 @@
                         iPhone model, iOS version, and the version of the MicLab Karaoke app.
                     </p>
                     <p><strong>Email support:</strong>
-                        <a href="/cdn-cgi/l/email-protection#cfbcbabfbfa0bdbb8fa2a6aca3aeade1aebfbf"><span
-                                class="__cf_email__"
-                                data-cfemail="42313732322d3036022f2b212e23206c233232">[email&#160;protected]</span></a>
+                        <a href="/cdn-cgi/l/email-protection#cfbcbabfbfa0bdbb8fa2a6aca3aeade1aebfbf"><span class="__cf_email__" data-cfemail="42313732322d3036022f2b212e23206c233232">[email&#160;protected]</span></a>
                     </p>
 
                     <form class="support-form" id="contact-form">
@@ -995,10 +993,7 @@
                         <summary>5. How can I ask you to delete my data or account?</summary>
                         <p>
                             You can request deletion of your data or account at any time by emailing
-                            <a href="/cdn-cgi/l/email-protection#b8cbcdc8c8d7caccf8d5d1dbd4d9da96d9c8c8"><span
-                                    class="__cf_email__"
-                                    data-cfemail="33404643435c4147735e5a505f52511d524343">[email&#160;protected]</span></a>
-                            with the subject
+                            <a href="/cdn-cgi/l/email-protection#b8cbcdc8c8d7caccf8d5d1dbd4d9da96d9c8c8"><span class="__cf_email__" data-cfemail="33404643435c4147735e5a505f52511d524343">[email&#160;protected]</span></a> with the subject
                             “Account / data deletion request”. We will process your request according to our Privacy
                             Policy
                             and local regulations.
@@ -1037,23 +1032,28 @@
         </footer>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
-        // Contact form handler - opens user's email client with pre-filled information
-        document.getElementById('contact-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-
-            // Create email body with proper formatting
-            const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${message}`;
-
-            // Open user's default email client with pre-filled information
-            window.location.href = `mailto:support@miclab.app?subject=${encodeURIComponent(subject)}&body=${body}`;
+        // Wait for page to load before attaching form handler
+        document.addEventListener('DOMContentLoaded', function() {
+            // Contact form handler - opens user's email client with pre-filled information
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value;
+                    
+                    // Create email body with proper formatting
+                    const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${message}`;
+                    
+                    // Open user's default email client with pre-filled information
+                    window.location.href = `mailto:support@miclab.app?subject=${encodeURIComponent(subject)}&body=${body}`;
+                });
+            }
         });
 
         // Language switcher functionality
