@@ -6,7 +6,7 @@
     <title>MicLab – Karaoke App – Sing Like Never Before</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="MicLab: Professional karaoke recording app with live lyrics highlighting, voice effects, and perfect for all skill levels.">
+        content="MicLab: Professional karaoke recording app with...highlighting, voice effects, and perfect for all skill levels.">
     <style>
         :root {
             --bg-dark: #050816;
@@ -201,8 +201,18 @@
             font-size: 16px;
             line-height: 1.7;
             max-width: 480px;
-            margin-bottom: 26px;
+            margin-bottom: 10px;
             font-weight: 400;
+        }
+
+        .hero-support-note {
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-bottom: 26px;
+        }
+
+        .hero-support-note strong {
+            color: var(--accent-2);
         }
 
         .hero-ctas {
@@ -396,114 +406,6 @@
             font-weight: 400;
         }
 
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-        }
-
-        .pricing-card {
-            padding: 32px 28px;
-            border: 1px solid rgba(75, 225, 255, 0.2);
-            border-radius: var(--radius-xl);
-            background: rgba(10, 10, 25, 0.5);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .pricing-card.popular {
-            border-color: var(--accent-1);
-            transform: scale(1.05);
-        }
-
-        .pricing-card:hover {
-            border-color: rgba(75, 225, 255, 0.5);
-        }
-
-        .pricing-pill {
-            display: inline-flex;
-            align-items: center;
-            padding: 6px 12px;
-            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-            border-radius: 999px;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: #050816;
-            margin-bottom: 16px;
-            width: fit-content;
-        }
-
-        .pricing-name {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: -0.01em;
-        }
-
-        .pricing-price {
-            font-size: 40px;
-            font-weight: 800;
-            background: linear-gradient(120deg, var(--accent-1), var(--accent-2));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 4px;
-            letter-spacing: -0.02em;
-        }
-
-        .pricing-note {
-            color: var(--text-muted);
-            font-size: 13px;
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
-
-        .pricing-features {
-            list-style: none;
-            margin-bottom: 24px;
-            flex-grow: 1;
-        }
-
-        .pricing-features li {
-            color: var(--text-muted);
-            font-size: 13px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 400;
-        }
-
-        .pricing-features span {
-            color: var(--accent-2);
-            font-weight: 700;
-        }
-
-        .pricing-cta {
-            padding: 12px 20px;
-            border: none;
-            border-radius: 999px;
-            background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-            color: #050816;
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .pricing-cta.secondary {
-            background: rgba(75, 225, 255, 0.1);
-            color: var(--accent-2);
-            border: 1px solid rgba(75, 225, 255, 0.3);
-        }
-
-        .pricing-cta:hover {
-            transform: translateY(-2px);
-        }
-
         .testimonials {
             display: grid;
             grid-template-columns: 2fr 1fr;
@@ -603,6 +505,143 @@
             flex-direction: column;
         }
 
+        /* SUPPORT & FAQ */
+        #support {
+            margin-top: 72px;
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+            gap: 32px;
+        }
+
+        .support-card {
+            padding: 28px;
+            border-radius: var(--radius-xl);
+            background: rgba(10, 10, 25, 0.8);
+            border: 1px solid rgba(75, 225, 255, 0.3);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .support-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .support-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .support-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: rgba(75, 225, 255, 0.12);
+            color: var(--accent-2);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 10px;
+        }
+
+        .support-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        .support-meta strong {
+            color: var(--accent-2);
+        }
+
+        .support-form {
+            margin-top: 12px;
+            margin-bottom: 6px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .form-field {
+            flex: 1;
+            min-width: 140px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-bottom: 10px;
+        }
+
+        .form-field label {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .form-field input,
+        .form-field textarea {
+            padding: 8px 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(75, 225, 255, 0.35);
+            background: rgba(5, 8, 22, 0.9);
+            color: var(--text-main);
+            font-size: 14px;
+            outline: none;
+        }
+
+        .form-field input:focus,
+        .form-field textarea:focus {
+            border-color: var(--accent-2);
+        }
+
+        .support-email-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 4px;
+            padding: 10px 20px;
+            border-radius: 999px;
+            border: 1px solid rgba(75, 225, 255, 0.6);
+            background: rgba(75, 225, 255, 0.1);
+            color: var(--accent-2);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .support-email-btn:hover {
+            background: rgba(75, 225, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .support-faq details {
+            margin-bottom: 10px;
+            padding: 12px 14px;
+            border-radius: 14px;
+            background: rgba(10, 10, 25, 0.7);
+            border: 1px solid rgba(75, 225, 255, 0.18);
+        }
+
+        .support-faq summary {
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .support-faq p {
+            margin-top: 6px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
         footer {
             margin-top: 80px;
             padding-top: 32px;
@@ -671,6 +710,10 @@
                 gap: 6px;
             }
 
+            .support-grid {
+                grid-template-columns: 1fr;
+            }
+
             footer {
                 flex-direction: column;
                 gap: 12px;
@@ -692,19 +735,13 @@
             </div>
             <div class="nav-center">
                 <a href="#features">Features</a>
-                <a href="#pricing">Pricing</a>
                 <a href="#download">Download</a>
+                <a href="#support">Support &amp; FAQ</a>
             </div>
             <div class="nav-legal">
-                <a href="https://miclab.app/privacy/privacy.html">Privacy</a>
+                <a href="https://miclab.app/privacy/privacy.html">Privacy
+                    Policy</a>
                 <a href="https://miclab.app/terms/terms.html">Terms</a>
-            </div>
-            <div class="lang-switcher" id="language-switcher">
-                <button class="active" data-lang="en">EN</button>
-                <button data-lang="tr">TR</button>
-                <button data-lang="tm">TM</button>
-                <button data-lang="ru">RU</button>
-                <button data-lang="uz">UZ</button>
             </div>
         </nav>
 
@@ -713,11 +750,18 @@
             <div>
                 <div class="hero-kicker">Professional Karaoke</div>
                 <h1 class="hero-title">Record yourself singing <span class="hero-gradient">like a studio pro</span></h1>
-                <p class="hero-subtitle">Live lyrics that highlight word-by-word. Professional audio effects. Save your
-                    best performances. Download MicLab and feel like you're in a real recording studio.</p>
+                <p class="hero-subtitle">
+                    Live lyrics that highlight word-by-word. Professional audio effects. Save your best performances.
+                    Download MicLab and feel like you're in a real recording studio.
+                </p>
+                <p class="hero-support-note">
+                    <strong>Need help with the app?</strong> Scroll down to the <strong>Support &amp; FAQ</strong>
+                    section
+                    or contact us directly anytime.
+                </p>
                 <div class="hero-ctas">
                     <button class="btn-primary">Download on the App Store</button>
-                    <button class="btn-secondary">🌐 Learn More</button>
+                    <a href="#support" class="btn-secondary">Contact Support</a>
                 </div>
                 <p class="hero-social"><strong>Free trial:</strong> 7 days full access • No credit card needed</p>
             </div>
@@ -787,54 +831,6 @@
             </div>
         </section>
 
-        <!-- PRICING -->
-        <section id="pricing">
-            <div class="section-header">
-                <div>
-                    <div class="section-kicker">Pricing</div>
-                    <h2 class="section-title">Start free. Stay for the vibes.</h2>
-                </div>
-                <p class="section-subtitle">Try everything for 7 days. After that, pick the plan that fits your singing
-                    style – from casual to every-night performer.</p>
-            </div>
-            <div class="pricing-grid">
-                <article class="pricing-card">
-                    <h3 class="pricing-name">Free Trial</h3>
-                    <p class="pricing-price">$0</p>
-                    <p class="pricing-note">7 days • full features • no ads</p>
-                    <ul class="pricing-features">
-                        <li><span>✓</span> All songs unlocked</li>
-                        <li><span>✓</span> Unlimited recordings</li>
-                        <li><span>✓</span> Full voice effects</li>
-                    </ul>
-                    <button class="pricing-cta secondary">Start for Free</button>
-                </article>
-                <article class="pricing-card popular">
-                    <div class="pricing-pill">Most popular</div>
-                    <h3 class="pricing-name">Premium Monthly</h3>
-                    <p class="pricing-price">$4.99</p>
-                    <p class="pricing-note">Perfect for regular singers</p>
-                    <ul class="pricing-features">
-                        <li><span>✓</span> Unlimited singing & recordings</li>
-                        <li><span>✓</span> All effects & future updates</li>
-                        <li><span>✓</span> Priority email support</li>
-                    </ul>
-                    <button class="pricing-cta">Start Monthly</button>
-                </article>
-                <article class="pricing-card">
-                    <h3 class="pricing-name">Premium Yearly</h3>
-                    <p class="pricing-price">$24.99</p>
-                    <p class="pricing-note">Best value, save 58%</p>
-                    <ul class="pricing-features">
-                        <li><span>✓</span> Save over 50% vs. monthly</li>
-                        <li><span>✓</span> All new features included</li>
-                        <li><span>✓</span> Early access to new songs</li>
-                    </ul>
-                    <button class="pricing-cta secondary">Go Yearly</button>
-                </article>
-            </div>
-        </section>
-
         <!-- TESTIMONIALS -->
         <section>
             <div class="section-header">
@@ -883,7 +879,145 @@
             </div>
             <div class="cta-buttons">
                 <button class="btn-primary">Download on the App Store</button>
-                <button class="btn-secondary">🌐 Join the Early Access List</button>
+                <a href="#support" class="btn-secondary">Need Help? Visit Support</a>
+            </div>
+        </section>
+
+        <!-- SUPPORT & FAQ -->
+        <section id="support">
+            <div class="section-header">
+                <div>
+                    <div class="section-kicker">Support</div>
+                    <h2 class="section-title">Need help with MicLab Karaoke?</h2>
+                </div>
+                <p class="section-subtitle">
+                    This is the official support page for the MicLab Karaoke app. If something doesn’t work as expected,
+                    or you have questions about recordings, subscriptions, or your data, you can contact us directly
+                    here.
+                </p>
+            </div>
+
+            <div class="support-grid">
+                <!-- Contact & form -->
+                <div class="support-card">
+                    <div class="support-pill">Contact us</div>
+                    <h3>Leave us a message</h3>
+                    <p>
+                        The fastest way to get help is to send us a short description of your issue together with your
+                        iPhone model, iOS version, and the version of the MicLab Karaoke app.
+                    </p>
+                    <p><strong>Email support:</strong>
+                        <a href="mailto:support@miclab.app">support@miclab.app</a>
+                    </p>
+
+                    <form class="support-form" action="mailto:support@miclab.app" method="post" enctype="text/plain">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="Name" placeholder="Your name" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="Email" placeholder="you@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="Subject"
+                                placeholder="Recording, subscription, bug report..." required>
+                        </div>
+                        <div class="form-field">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="Message" rows="4"
+                                placeholder="Describe what happened, what you tried, and any error messages you saw."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="support-email-btn">Send message</button>
+                    </form>
+
+                    <div class="support-meta">
+                        We usually respond within <strong>24 hours</strong> on business days.
+                        Support is currently available in <strong>English</strong> and <strong>Turkish</strong>.
+                    </div>
+                    <div class="support-meta">
+                        For requests about your personal data or account deletion, please clearly write
+                        “<strong>Account / data deletion request</strong>” in the subject line.
+                    </div>
+                </div>
+
+                <!-- FAQ -->
+                <div class="support-card support-faq" id="faq">
+                    <div class="support-pill">FAQ</div>
+                    <h3>Frequently asked questions</h3>
+
+                    <details>
+                        <summary>1. My recording didn’t save or disappeared. What should I do?</summary>
+                        <p>
+                            First, check if you had any remaining recording credits inside the app and make sure you
+                            allowed microphone access in iOS Settings &gt; Privacy &gt; Microphone. If the issue
+                            continues,
+                            write to us with the song title you tried and approximately when you recorded it.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>2. I bought credits or a subscription, but nothing unlocked.</summary>
+                        <p>
+                            Please open the app and go to the Account / Subscription screen and tap “Restore Purchases”.
+                            If access still does not unlock, send us the date and approximate time of purchase and the
+                            country/region of your Apple ID so we can investigate.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>3. How can I restore my purchases on a new device or after reinstalling?</summary>
+                        <p>
+                            Install the MicLab Karaoke app on your new device, sign in with the same Apple ID you used
+                            for
+                            the purchase, and tap “Restore Purchases” inside the app. If this doesn’t work, contact
+                            support
+                            so we can help you further.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>4. Do you store my voice recordings on your servers?</summary>
+                        <p>
+                            In general, your recordings are stored on your device so that you stay in control. If we
+                            introduce any cloud-based features in the future, we will clearly inform you inside the app
+                            and update our Privacy Policy. For detailed information, please read our Privacy Policy.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>5. How can I ask you to delete my data or account?</summary>
+                        <p>
+                            You can request deletion of your data or account at any time by emailing
+                            <a href="mailto:support@miclab.app">support@miclab.app</a> with the subject
+                            “Account / data deletion request”. We will process your request according to our Privacy
+                            Policy
+                            and local regulations.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>6. The lyrics or timing look wrong. How do I report this?</summary>
+                        <p>
+                            Please take a screenshot if possible and tell us the song title, language, and where the
+                            problem appears (for example: verse, chorus, specific line). This helps us fix the timing or
+                            text much faster.
+                        </p>
+                    </details>
+
+                    <details>
+                        <summary>7. How fast do you answer and which languages do you support?</summary>
+                        <p>
+                            We aim to respond within 24 hours on business days. Right now, we provide support in English
+                            and Turkish. You can also write to us in simple Russian or Turkmen and we will still do our
+                            best to help.
+                        </p>
+                    </details>
+                </div>
             </div>
         </section>
 
@@ -917,3 +1051,10 @@
             document.querySelectorAll('#language-switcher button').forEach(button => {
                 if (button.dataset.lang === saved) {
                     button.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
