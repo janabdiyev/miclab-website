@@ -913,6 +913,8 @@
                     </p>
 
                     <form class="support-form" id="contact-form" action="https://formspree.io/f/xpwvrvqb" method="POST">
+                        <!-- Hidden field to set reply-to address -->
+                        <input type="hidden" name="_replyto" value="support@miclab.app">
                         <div class="form-row">
                             <div class="form-field">
                                 <label for="name">Name</label>
@@ -920,12 +922,12 @@
                             </div>
                             <div class="form-field">
                                 <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                                <input type="email" id="email" name="_replyto" placeholder="you@example.com" required>
                             </div>
                         </div>
                         <div class="form-field">
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject"
+                            <input type="text" id="subject" name="_subject"
                                 placeholder="Recording, subscription, bug report..." required>
                         </div>
                         <div class="form-field">
